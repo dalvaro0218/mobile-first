@@ -15,9 +15,10 @@
 }
 
 header {
+    margin: auto;
     background: #8E9AAF;
     color: #fff;
-    width: 100%;
+    width: 330px;
     height: 27.9rem;
 }
 
@@ -51,7 +52,7 @@ main {
 }
 
 .page {
-    padding: 14px 32px 60px 32px;
+    padding: 0px 32px 60px 32px;
 }
 
 .description {
@@ -59,6 +60,7 @@ main {
     font-family: "Palanquin";
     margin-bottom: 3rem;
     font-weight: 400;
+    padding: 14px 0 0 0;
 
     color: #23053A;
 }
@@ -69,10 +71,15 @@ main {
 }
 
 .item img {
-    height: 100%;
+    height: auto;
     width: 100%;
     object-fit: cover;
     border-radius: 2.0rem;
+}
+
+.item img:hover {
+    opacity: 0.7;
+    transition-duration: 900ms;
 }
 
 .item h2 span {
@@ -87,10 +94,6 @@ main {
     height: 3.5rem;
 
     flex-direction: column;
-    
-}
-
-.item h2 span {
     display: inline-flex;
     align-items: center;
     background: #FEEAFA;
@@ -99,4 +102,38 @@ main {
     color: #4A4E69;
 
     line-height: 3.4rem;
+    
 }
+
+.item {
+    animation: downtop 1000ms;
+}
+
+@keyframes downtop {
+    0%   {
+        opacity: 0;
+        transform:translateY(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform:translateY(-1.5rem);
+    }
+  }
+
+
+  .item h2 span {
+    animation: topdown 1000ms;
+}
+
+@keyframes topdown {
+    0%   {
+        opacity: 0;
+        transform:translateY(-4.5rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform:translateY(0);
+    }
+  }
